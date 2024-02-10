@@ -1,0 +1,8 @@
+nebel.ai {
+    reverse_proxy :3000
+    encode zstd gzip
+}
+
+hbh.nebel.ai {
+    reverse_proxy :3020
+}
