@@ -1,5 +1,5 @@
 import { Title } from "@solidjs/meta"
-import styles from "./index/styles.module.scss"
+import styles from "./index/index.module.scss"
 import { Starfield } from "~/components/Starfield/Starfield"
 
 export default function Home() {

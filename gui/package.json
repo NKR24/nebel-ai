@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "start": "vinxi dev",
-    "build": "vinxi build --port 3020"
+    "build": "vinxi build"
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.2",
@@ -20,6 +20,7 @@
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.56.0",
     "eslint-plugin-solid": "^0.13.1",
+    "nodemon": "^3.0.3",
     "prettier": "^3.2.5"
   }
 }
