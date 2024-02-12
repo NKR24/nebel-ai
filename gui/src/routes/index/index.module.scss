@@ -17,6 +17,7 @@
 }
 
 .button{
+  z-index: 3;
   margin-top: 34px;
   border-radius: 7px;
   opacity: 1;
@@ -47,9 +48,9 @@
   text-align: center;
 
   font-size: clamp(
-          1.247321025468409rem,
+          1.147321025468409rem,
           calc(
-                  1.247321025468409rem +
+                  1.057321025468409rem +
                   ((4.449725439999998 - 3.747321025468409) *
                   ((100vw - 20rem) / (96 - 20)))
           ),
