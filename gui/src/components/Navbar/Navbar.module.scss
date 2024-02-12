@@ -1,0 +1,37 @@
+.nav{
+  z-index: 10000;
+  padding: 2.4vw 3.02vw 0;
+}
+
+.container{
+  padding-top: 0.47vw;
+  padding-bottom: 0.47vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  box-shadow: 0 0.21vw 0.21vw 0 rgba(0, 0, 0, 0.25);
+  background: rgba(19, 22, 31, 0.9);
+  backdrop-filter: blur(0.47vw);
+}
+
+.logo{
+  margin-left: -90vw;
+}
+
+.pages{
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  column-gap: 1vw;
+}
+
+.text{
+  font-family: Specter, serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #fff;
+}
