@@ -17,15 +17,49 @@
 }
 
 .button{
-  width: 7.92vw;
-  height: 3.18vw;
+  margin-top: 34px;
+  border-radius: 7px;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 134px;
+  height: 62px;
 
-  font-family: Specter, serif;
+  color: rgba(0, 0, 0, 1);
+  font-size: 20px;
   font-weight: 400;
-  font-size: 1.04vw;
   text-align: center;
-  color: #000;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 82px;
+    right: 15px;
+    width: 99px;
+    height: 39px;
+    font-size: 15px;
+  }
+}
+
+.lowTitle{
+  opacity: 1;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 300;
+  text-align: center;
+
+  font-size: clamp(
+          1.247321025468409rem,
+          calc(
+                  1.247321025468409rem +
+                  ((4.449725439999998 - 3.747321025468409) *
+                  ((100vw - 20rem) / (96 - 20)))
+          ),
+          2.449725439999998rem
+  );
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    width: 205px;
+  }
 }
 
 .title {
