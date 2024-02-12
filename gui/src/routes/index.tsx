@@ -6,7 +6,7 @@ import Navbar from "~/components/Navbar/Navbar"
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <main class={styles.page}>
         <Starfield />
         <Title>Nebel AI</Title>
