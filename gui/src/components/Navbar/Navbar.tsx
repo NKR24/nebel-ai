@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.scss"
 import { A } from "@solidjs/router"
-
+//
 
 export default function Navbar() {
   return (
