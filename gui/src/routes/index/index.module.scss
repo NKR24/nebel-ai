@@ -1,11 +1,19 @@
+.page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
   // font color
   color: #775be2;
-  opacity: 0.9;
   background-image: -webkit-linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
   background-clip: text;
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
+  font-weight: 900;
 
   // glow effect
   filter: drop-shadow(0px 0px 80px rgba(206, 89, 182, 0.4));
@@ -32,12 +40,4 @@
             4.449725439999998rem
     );
   }
-}
-
-.page {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
