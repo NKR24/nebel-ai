@@ -3,18 +3,6 @@
 version = 3
 
 [[package]]
-name = "RustProjects"
-version = "0.1.0"
-dependencies = [
- "axum",
- "lettre",
- "serde",
- "serde_json",
- "tokio",
- "tower-http",
-]
-
-[[package]]
 name = "addr2line"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -181,6 +169,18 @@ checksum = "8eebd66744a15ded14960ab4ccdbfb51ad3b81f51f3f04a80adac98c985396c9"
 dependencies = [
  "hashbrown",
  "stacker",
+]
+
+[[package]]
+name = "contact"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "lettre",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tower-http",
 ]
 
 [[package]]
