@@ -1,10 +1,10 @@
 mod send_email;
 
-use axum::{Form, Json, Router, routing::post};
+use axum::{Json, Router, routing::post};
 use axum::http::header::CONTENT_TYPE;
 use axum::http::Method;
 use serde::Deserialize;
-use tokio::task;
+
 use tower_http::cors::{CorsLayer, Any};
 
 #[derive(Debug, Deserialize)]
