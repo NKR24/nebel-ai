@@ -13,50 +13,46 @@ export default function Home() {
   const [commentaryInputValue, setCommentaryInputValue] = createSignal("")
 
   return (
-    <>
-      <main class={styles.page}>
-        <Navbar />
-        <Starfield />
-        <Title>Nebel AI</Title>
-        <h1 class={styles.title}>Welcome to Nebel.</h1>
-        <h2 class={styles.lowTitle}>Easy Solutions for Your Business and Personal Needs </h2>
-        <button onClick={() => setShowContactForm(!showContactForm())} class={styles.button}>
-          <span>Contact Us</span>
+    <main class={styles.page}>
+      <Title>Nebel AI</Title>
+      <h1 class={styles.title}>Welcome to Nebel.</h1>
+      <h2 class={styles.lowTitle}>Easy Solutions for Your Business and Personal Needs </h2>
+      <button onClick={() => setShowContactForm(!showContactForm())} class={styles.button}>
+        <span>Contact Us</span>
+      </button>
+      <Modal isOpen={showContactForm()}>
+        <input
+          type="email"
+          name="email"
+          placeholder="Введите email"
+          onInput={(event) => setEmailInputValue(event.currentTarget.value)}
+        />
+        <input
+          type="text"
+          name="name"
+          placeholder="Введите имя"
+          onInput={(event) => setNameInputValue(event.currentTarget.value)}
+        />
+        <textarea
+          name="comment"
+          rows="4"
+          cols="50"
+          placeholder="Комментарий"
+          onInput={(event) => setCommentaryInputValue(event.currentTarget.value)}
+        />
+        <button
+          onClick={() => {
+            setShowContactForm(false)
+            postContactForm({
+              email: emailInputValue(),
+              name: nameInputValue(),
+              commentary: commentaryInputValue(),
+            })
+          }}
+        >
+          submit
         </button>
-        <Modal isOpen={showContactForm()}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Введите email"
-            onInput={(event) => setEmailInputValue(event.currentTarget.value)}
-          />
-          <input
-            type="text"
-            name="name"
-            placeholder="Введите имя"
-            onInput={(event) => setNameInputValue(event.currentTarget.value)}
-          />
-          <textarea
-            name="comment"
-            rows="4"
-            cols="50"
-            placeholder="Комментарий"
-            onInput={(event) => setCommentaryInputValue(event.currentTarget.value)}
-          />
-          <button
-            onClick={() => {
-              setShowContactForm(false)
-              postContactForm({
-                email: emailInputValue(),
-                name: nameInputValue(),
-                commentary: commentaryInputValue(),
-              })
-            }}
-          >
-            submit
-          </button>
-        </Modal>
-      </main>
-    </>
+      </Modal>
+    </main>
   )
 }
