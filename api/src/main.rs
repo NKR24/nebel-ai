@@ -11,11 +11,11 @@ use tower_http::cors::{CorsLayer, Any};
 struct ContactForm {
     email: String,
     name: String,
-    commentary: String
+    commentary: String,
 }
 
-async fn contact_handler(Json(form) : Json<ContactForm>) {
-    send_email::send_email(form).expect("TODO: panic message");
+async fn contact_handler(Json(form): Json<ContactForm>) {
+    send_email::send_email(form).expect("Could not send email!");
 }
 
 #[tokio::main]

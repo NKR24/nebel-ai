@@ -1,24 +1,23 @@
-
 use lettre::{Message, SmtpTransport, Transport};
 use lettre::transport::smtp::{authentication::Credentials};
 use crate::ContactForm;
 
 pub fn send_email(form: ContactForm) -> std::result::Result<(), Box<dyn std::error::Error>> {
     let email_to_us = Message::builder()
-        .from("khvorostinn@gmail.com".parse().unwrap())
-        .to("khvorostinn@gmail.com".parse().unwrap())
-        .subject(format!("{} {}", form.name, form.email))
+        .from("contact.nebel@gmail.com".parse().unwrap())
+        .to("contact.nebel@gmail.com".parse().unwrap())
+        .subject(format!("contact request {} {}", form.name, form.email))
         .body(String::from(form.commentary))
         .unwrap();
 
     let email_to_customer = Message::builder()
-        .from("khvorostinn@gmail.com".parse().unwrap())
+        .from("contact.nebel@gmail.com".parse().unwrap())
         .to(form.email.parse().unwrap())
-        .subject(format!("Приняли заявку вашу заявку, {}", form.name))
-        .body(String::from("Спасибо большое за отклик, обработаем вашу заявку в ближайшее время"))
+        .subject(format!("{}, your contact request is received", form.name))
+        .body(String::from("Thank you for contacting us! We will get back to you as soon as possible."))
         .unwrap();
 
-    let creds = Credentials::new("khvorostinn@gmail.com".to_string(), "nnjk afkx vixt lijs".to_string());
+    let creds = Credentials::new("contact.nebel@gmail.com".to_string(), "ptgn pmvc mlji sykj".to_string());
 
     let mailer = SmtpTransport::starttls_relay("smtp.gmail.com")
         .unwrap()
