@@ -1,7 +1,5 @@
 import { Title } from "@solidjs/meta"
 import styles from "./index/index.module.scss"
-import { Starfield } from "~/components/Starfield/Starfield"
-import Navbar from "~/components/Navbar/Navbar"
 import { createSignal } from "solid-js"
 import { Modal } from "~/components/Modal/Modal"
 import { postContactForm } from "~/routes/index/queries"
@@ -23,21 +21,21 @@ export default function Home() {
       <Modal isOpen={showContactForm()}>
         <input
           type="email"
-          name="email"
-          placeholder="Введите email"
+          placeholder="email"
+          value={emailInputValue()}
           onInput={(event) => setEmailInputValue(event.currentTarget.value)}
         />
         <input
           type="text"
-          name="name"
-          placeholder="Введите имя"
+          placeholder="name"
+          value={nameInputValue()}
           onInput={(event) => setNameInputValue(event.currentTarget.value)}
         />
         <textarea
-          name="comment"
           rows="4"
           cols="50"
-          placeholder="Комментарий"
+          placeholder="commentary"
+          value={commentaryInputValue()}
           onInput={(event) => setCommentaryInputValue(event.currentTarget.value)}
         />
         <button
