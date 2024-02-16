@@ -3,6 +3,5 @@
 </script>
 
 <div>
-	<Navbar/>
 	<h1>Portfolio</h1>
 </div>

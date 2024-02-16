@@ -34,7 +34,6 @@
   "type": "module",
   "dependencies": {
     "dotenv": "^16.4.4",
-    "sass": "^1.70.0",
-    "svelte-media-queries": "^1.6.2"
+    "sass": "^1.70.0"
   }
 }

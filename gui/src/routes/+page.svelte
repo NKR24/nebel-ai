@@ -1,11 +1,8 @@
 <script>
-	import Navbar from '../components/Navbar/Navbar.svelte';
 	import '../main.scss';
-	import MediaQuery from 'svelte-media-queries';
 </script>
 
 <main class="page">
-	<Navbar />
 	<h1 class="title">Welcome to Nebel.</h1>
 	<h2 class="lowTitle">Easy Solutions for Your Business and Personal Needs </h2>
 	<button class="button">
@@ -13,14 +10,9 @@
 	</button>
 </main>
 
-<MediaQuery query="(max-width: 768px)" let:matches>
-	{#if matches}
-		privet
-	{/if}
-</MediaQuery>
-
-
 <style lang="scss">
+
+
   .page {
     height: 100%;
     width: 100%;

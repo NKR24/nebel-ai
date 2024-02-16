@@ -1,5 +1,5 @@
 <script>
-	import Navbar from '../../components/Navbar/Navbar.svelte'
+	import Navbar from '../../components/Navbar/Navbar.svelte';
 </script>
 
 <svelte:head>
@@ -8,6 +8,5 @@
 </svelte:head>
 
 <div>
-	<Navbar/>
 	<h1>About</h1>
 </div>
