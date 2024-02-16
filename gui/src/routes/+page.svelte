@@ -1,7 +1,3 @@
-<script>
-	import '../main.scss';
-</script>
-
 <main class="page">
 	<h1 class="title">Welcome to Nebel.</h1>
 	<h2 class="lowTitle">Easy Solutions for Your Business and Personal Needs </h2>
