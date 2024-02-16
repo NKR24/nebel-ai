@@ -16,12 +16,12 @@
 		flex-direction: column;
 	}
 
-	.container {
+	.navbar {
 		width: 7.92vw;
 		height: 3.18vw;
 	}
 
-	.container:hover {
+	.navbar:hover {
 		transform: scale(1.1);
 	}
 

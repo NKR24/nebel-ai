@@ -1,5 +1,5 @@
-<nav class="nav">
-	<div class="container">
+<nav class="navbar-container">
+	<div class="navbar">
 		<div class="logo">
 			<a href="/">
 				<svg
@@ -28,37 +28,29 @@
 </nav>
 
 <style lang="scss">
-  .nav {
-    flex-direction: column;
-    display: flex;
+  .navbar-container {
     padding: 42px 58px 0;
     position: fixed;
     left: 0;
     right: 0;
-  }
 
-  @media (max-width: 768px) {
-    .nav {
+    @media (max-width: 768px) {
       padding: 10px 15px 12px 12px;
       position: fixed;
       bottom: 0;
     }
   }
 
-  .container {
-    height: 76px;
+  .navbar {
     position: relative;
-
+    height: 76px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
     border-radius: 13px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgba(19, 22, 31, 0.9);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: rgb(19, 22, 31);
 
     @media (max-width: 768px) {
       height: 50px;
