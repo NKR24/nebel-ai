@@ -4,7 +4,7 @@
   "scripts": {
     "start": "vite dev",
     "build": "vite build",
-    "deploy": "bun run build && pm2 start 'bun run build/index.js' --name 'nebel.ai'",
+    "deploy": "bun run build && pm2 restart 'bun run build/index.js' --name 'nebel.ai' --update-env",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
