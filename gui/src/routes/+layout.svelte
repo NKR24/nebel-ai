@@ -1,7 +1,35 @@
 <script>
-	import "../main.scss"
+	import '../main.scss';
 	import Navbar from '../components/Navbar/Navbar.svelte';
 </script>
 
 <Navbar />
 <slot />
+
+<style lang="scss">
+	body {
+		font-family: 'specter', sans-serif;
+		font-weight: 300;
+		color: white;
+	}
+
+	button {
+		all: unset;
+	}
+
+	html,
+	body,
+	#app {
+		height: 100%;
+		margin: 0;
+	}
+
+	html {
+		background: #0b0c12 radial-gradient(#0f151e 0%, #090a0f 100%);
+	}
+
+	h1,
+	h2 {
+		margin: 0;
+	}
+</style>
