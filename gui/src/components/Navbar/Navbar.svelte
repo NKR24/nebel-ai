@@ -28,87 +28,88 @@
 </nav>
 
 <style lang="scss">
-	.nav {
-		flex-direction: column;
-		display: flex;
-		padding: 42px 58px 0;
-		position: fixed;
-		left: 0;
-		right: 0;
-	}
+  .nav {
+    flex-direction: column;
+    display: flex;
+    padding: 42px 58px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
 
-	@media (max-width: 768px) {
-		.nav {
-			padding: 10px 15px 12px 12px;
-			position: fixed;
-			bottom: 0;
-		}
-	}
-	.container {
-		height: 76px;
-		position: relative;
+  @media (max-width: 768px) {
+    .nav {
+      padding: 10px 15px 12px 12px;
+      position: fixed;
+      bottom: 0;
+    }
+  }
 
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
+  .container {
+    height: 76px;
+    position: relative;
 
-		border-radius: 13px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		background-color: rgba(19, 22, 31, 0.9);
-		backdrop-filter: blur(6px);
-		-webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-		@media (max-width: 768px) {
-			height: 50px;
-		}
-	}
+    border-radius: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(19, 22, 31, 0.9);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(16px);
 
-	.logo {
-		position: absolute;
-		left: 20px;
-		top: 19px;
+    @media (max-width: 768px) {
+      height: 50px;
+    }
+  }
 
-		@media (max-width: 768px) {
-			left: 17px;
-			top: 0;
-		}
-	}
+  .logo {
+    position: absolute;
+    left: 20px;
+    top: 19px;
 
-	.logo svg {
-		@media (max-width: 768px) {
-			width: 30px;
-			height: 50px;
-		}
-	}
+    @media (max-width: 768px) {
+      left: 17px;
+      top: 0;
+    }
+  }
 
-	.pages {
-		z-index: 10;
-		display: flex;
-		column-gap: 17px;
+  .logo svg {
+    @media (max-width: 768px) {
+      width: 30px;
+      height: 50px;
+    }
+  }
 
-		@media (max-width: 768px) {
-			position: absolute;
-			right: 20px;
-			column-gap: 13px;
-		}
-	}
+  .pages {
+    z-index: 10;
+    display: flex;
+    column-gap: 17px;
 
-	.text {
-		opacity: 1;
-		color: rgba(255, 255, 255, 1);
-		font-size: 24px;
-		font-weight: 700;
-		text-align: center;
-		text-decoration: underline;
+    @media (max-width: 768px) {
+      position: absolute;
+      right: 20px;
+      column-gap: 13px;
+    }
+  }
 
-		@media (max-width: 768px) {
-			opacity: 1;
-			color: rgba(255, 255, 255, 1);
-			font-size: 16px;
-			font-weight: 700;
-			text-align: center;
-			text-decoration: underline;
-		}
-	}
+  .text {
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: underline;
+
+    @media (max-width: 768px) {
+      opacity: 1;
+      color: rgba(255, 255, 255, 1);
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: underline;
+    }
+  }
 </style>
