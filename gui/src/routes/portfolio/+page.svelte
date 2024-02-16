@@ -1,7 +1,8 @@
-<script>
-	import Navbar from '../../components/Navbar/Navbar.svelte';
-</script>
+<svelte:head>
+	<title>Portfolio</title>
+	<meta name="description" content="Portfolio" />
+</svelte:head>
 
-<div>
+<main>
 	<h1>Portfolio</h1>
-</div>
+</main>
