@@ -1,10 +1,16 @@
+<script lang="ts"></script>
+
 <main class="page">
 	<h1 class="title">Welcome to Nebel.</h1>
-	<h2 class="lowTitle">Easy Solutions for Your Business and Personal Needs</h2>
+	<h2 class="subtitle">Easy Solutions for Your Business and Personal Needs</h2>
+	{@render contactButton()}
+</main>
+
+{#snippet contactButton()}
 	<button class="button">
 		<span>Contact Us</span>
 	</button>
-</main>
+{/snippet}
 
 <style lang="scss">
 	.page {
@@ -50,7 +56,7 @@
 		}
 	}
 
-	.lowTitle {
+	.subtitle {
 		opacity: 1;
 		color: rgba(255, 255, 255, 1);
 		font-weight: 300;
@@ -76,7 +82,7 @@
 		color: #775be2;
 		background-image: -webkit-linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
 		background-clip: text;
-		text-fill-color: transparent;
+		color: transparent;
 		-webkit-text-fill-color: transparent;
 		font-weight: 900;
 
