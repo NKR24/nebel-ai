@@ -7,7 +7,7 @@
 </main>
 
 {#snippet contactButton()}
-	<button class="button">
+	<button class="contactButton">
 		<span>Contact Us</span>
 	</button>
 {/snippet}
@@ -31,7 +31,7 @@
 		transform: scale(1.1);
 	}
 
-	.button {
+	.contactButton {
 		z-index: 3;
 		margin-top: 34px;
 		border-radius: 7px;
@@ -45,6 +45,17 @@
 		font-size: 20px;
 		font-weight: 400;
 		text-align: center;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		&:active {
+			transform: scale(1.04);
+			filter: brightness(0.7);
+		}
 
 		@media (max-width: 768px) {
 			position: fixed;
