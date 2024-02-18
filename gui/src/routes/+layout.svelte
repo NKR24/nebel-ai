@@ -14,14 +14,9 @@
 		color: white;
 	}
 
-	:global(button) {
+	:global(button, input, textarea) {
 		all: unset;
 	}
-
-	:global(textarea) {
-		all: unset;
-	}
-
 	:global(html, body, #app) {
 		height: 100%;
 		margin: 0;

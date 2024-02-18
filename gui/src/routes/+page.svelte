@@ -29,18 +29,18 @@
       <form onsubmit={handleContactFormSubmit} class="contactForm">
         <input
           class="input"
-          placeholder="E-Mail *"
-          type="email"
-          name="email"
-          bind:value={email}
-          required
-        />
-        <input
-          class="input"
           placeholder="Name *"
           type="text"
           name="name"
           bind:value={name}
+          required
+        />
+        <input
+          class="input"
+          placeholder="E-Mail *"
+          type="email"
+          name="email"
+          bind:value={email}
           required
         />
         <textarea
@@ -66,10 +66,6 @@
 </main>
 
 <style lang="scss">
-  .modalText {
-    color: #000;
-  }
-
   .contactForm {
     display: flex;
     flex-direction: column;
@@ -78,23 +74,40 @@
     gap: 8px;
   }
 
+  .input-valitation {
+    box-sizing: border-box;
+    $border-size: 0.25px;
+    outline: $border-size solid #151b25;
+
+    &:user-invalid {
+      outline: $border-size solid #c85a5a;
+    }
+
+    &:user-valid {
+      outline: $border-size solid #7eab7e;
+    }
+  }
   .input {
+    @extend .input-valitation;
+
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
+    font-weight: 300;
+    background-color: #151b25;
+    color: white;
   }
 
   .textarea {
+    @extend .input-valitation;
+
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     box-sizing: border-box;
     height: 150px;
     font-size: 16px;
+    background-color: #171b24;
 
     @media (min-width: 768px) {
       width: 400px;
@@ -135,7 +148,8 @@
   .closeContactFormButton {
     @extend .contactFormButton;
 
-    background-color: #767676;
+    background-color: #ffffff;
+    color: black;
   }
 
   .page {
