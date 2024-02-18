@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte"
+  import { fade } from "svelte/transition"
 
   const { isOpen, onClickAway, children } = $props<{
     isOpen: boolean
@@ -9,10 +10,14 @@
 </script>
 
 {#if isOpen}
-  <div class="modal">
+  <div class="modal" transition:fade={{ duration: 150 }}>
     {@render children()}
   </div>
-  <button class="veil" onclick={onClickAway} />
+  <button
+    class="veil"
+    onclick={onClickAway}
+    transition:fade={{ duration: 150 }}
+  />
 {/if}
 
 <style>
@@ -33,6 +38,5 @@
     left: 0;
     right: 0;
     bottom: 0;
-    transition: all 0.2s ease-in-out;
   }
 </style>
