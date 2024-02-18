@@ -24,7 +24,7 @@
   <button class="contactButton" onclick={toggleContactForm}>
     Contact Us
   </button>
-  <Modal isOpen={showContactForm}>
+  <Modal isOpen={showContactForm} onClickAway={toggleContactForm}>
     <div class="modalText">
       <form onsubmit={handleContactFormSubmit} class="contactForm">
         <input
@@ -52,13 +52,6 @@
         />
         <div class="contactFormButtons">
           <button type="submit" class="submitButton"> Submit </button>
-          <button
-            type="button"
-            class="closeContactFormButton"
-            onclick={toggleContactForm}
-          >
-            Close
-          </button>
         </div>
       </form>
     </div>
@@ -142,14 +135,9 @@
   .submitButton {
     @extend .contactFormButton;
 
-    background-color: #4caf50;
-  }
-
-  .closeContactFormButton {
-    @extend .contactFormButton;
-
-    background-color: #ffffff;
-    color: black;
+    max-width: 50px;
+    background-image: linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
+    background-image: -webkit-linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
   }
 
   .page {
@@ -233,6 +221,7 @@
   .title {
     // font color
     color: #775be2;
+    background-image: linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
     background-image: -webkit-linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
     background-clip: text;
     color: transparent;
