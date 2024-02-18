@@ -29,8 +29,10 @@
 
 <style lang="scss">
   .navbar-container {
+    position: relative;
     padding: 42px 58px 0;
     position: fixed;
+    z-index: 10;
     left: 0;
     right: 0;
 

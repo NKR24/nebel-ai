@@ -28,7 +28,7 @@
 	}
 
 	:global(html) {
-		background: #0b0c12 radial-gradient(#0f151e 0%, #090a0f 100%);
+		background: #0c0e14 radial-gradient(#111921 0%, #090A0F 100%);
 	}
 
 	:global(h1, h2) {
