@@ -1,8 +1,8 @@
 <svelte:head>
-	<title>Portfolio</title>
-	<meta name="description" content="Portfolio" />
+  <title>Portfolio</title>
+  <meta name="description" content="Portfolio" />
 </svelte:head>
 
 <main>
-	<h1>Portfolio</h1>
+  <h1>Portfolio</h1>
 </main>

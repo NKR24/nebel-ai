@@ -1,22 +1,11 @@
-mod send_email;
-
-use axum::{Json, Router, routing::post};
 use axum::http::header::CONTENT_TYPE;
 use axum::http::Method;
-use serde::Deserialize;
+use axum::routing::post;
+use tower_http::cors::{Any, CorsLayer};
 
-use tower_http::cors::{CorsLayer, Any};
+use crate::routes::contact::contact_handler;
 
-#[derive(Debug, Deserialize)]
-struct ContactForm {
-    email: String,
-    name: String,
-    commentary: String,
-}
-
-async fn contact_handler(Json(form): Json<ContactForm>) {
-    send_email::send_email(form).expect("Could not send email!");
-}
+mod routes;
 
 #[tokio::main]
 async fn main() {
@@ -24,10 +13,12 @@ async fn main() {
         .allow_methods([Method::POST])
         .allow_origin(Any)
         .allow_headers([CONTENT_TYPE]);
-
-    let app = Router::new().route("/contact", post(contact_handler)).layer(cors);
-
+    let app = axum::Router::<()>::new()
+        .route("/contact", post(contact_handler))
+        .layer(cors);
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3021").await.unwrap();
+
+    println!("Server http://localhost:3021/");
     axum::serve(listener, app).await.unwrap();
 }
 

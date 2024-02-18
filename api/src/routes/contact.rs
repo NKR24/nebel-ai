@@ -1,13 +1,27 @@
+use axum::Json;
 use lettre::{Message, SmtpTransport, Transport};
-use lettre::transport::smtp::{authentication::Credentials};
-use crate::ContactForm;
+use lettre::transport::smtp::authentication::Credentials;
+use serde::Deserialize;
+use ts_rs::TS;
 
-pub fn send_email(form: ContactForm) -> std::result::Result<(), Box<dyn std::error::Error>> {
+#[derive(Debug, Deserialize, TS)]
+#[ts(export)]
+pub struct ContactForm {
+    email: String,
+    name: String,
+    message: String,
+}
+
+pub async fn contact_handler(Json(form): Json<ContactForm>) {
+    send_contact_emails(form).expect("Could not send email!");
+}
+
+fn send_contact_emails(form: ContactForm) -> std::result::Result<(), Box<dyn std::error::Error>> {
     let email_to_us = Message::builder()
         .from("contact.nebel@gmail.com".parse().unwrap())
         .to("contact.nebel@gmail.com".parse().unwrap())
         .subject(format!("contact request {} {}", form.name, form.email))
-        .body(String::from(form.commentary))
+        .body(form.message)
         .unwrap();
 
     let email_to_customer = Message::builder()
