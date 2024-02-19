@@ -20,7 +20,7 @@
   />
 {/if}
 
-<style>
+<style lang="scss">
   .modal {
     position: absolute;
     z-index: 99999;
@@ -31,9 +31,12 @@
   }
 
   .veil {
-    position: absolute;
+    position: fixed;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+    $blur: 32px;
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
     top: 0;
     left: 0;
     right: 0;
