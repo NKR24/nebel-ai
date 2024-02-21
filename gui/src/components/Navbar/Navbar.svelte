@@ -44,6 +44,19 @@
 </nav>
 
 <style lang="scss">
+  option:hover{
+    opacity: 0;
+  }
+
+  option{
+    all: unset;
+    color: white;
+    padding:  20px; /* Отступы */
+    border-bottom:  1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(19, 22, 31);
+  }
+
   select {
     all: unset;
     margin-right: 10px;
@@ -59,6 +72,13 @@
     font-weight: 700;
     text-align: center;
     text-decoration: underline;
+
+    appearance: none; /* Убираем стандартные стили браузера */
+    -webkit-appearance: none; /* Для Safari и Chrome */
+    @media (max-width: 768px) {
+      right: 17px;
+      top: 6px;
+    }
   }
 
   .navbar-container {
@@ -118,7 +138,6 @@
 
     @media (max-width: 768px) {
       position: absolute;
-      right: 20px;
       column-gap: 13px;
     }
   }
