@@ -1,3 +1,9 @@
+<script>
+  import { page } from "$app/stores"
+  import { goto } from "$app/navigation"
+  import { t, locale, locales } from "$lib/translations"
+</script>
+
 <nav class="navbar-container">
   <div class="navbar">
     <div class="logo">
@@ -18,16 +24,43 @@
     </div>
     <div class="pages">
       <a href="/about">
-        <span class="text">About</span>
+        <span class="text">{$t("navbar.about")}</span>
       </a>
       <a href="/portfolio">
-        <span class="text">Portfolio</span>
+        <span class="text">{$t("navbar.portfolio")}</span>
       </a>
     </div>
+    <select
+      on:change={({ currentTarget }) =>
+        goto(new URL(`?lang=${currentTarget.value}`, `${$page.url.href}`))}
+    >
+      {#each $locales as value}
+        <option {value} selected={value === $locale}
+          >{$t(`lang.${value}`)}</option
+        >
+      {/each}
+    </select>
   </div>
 </nav>
 
 <style lang="scss">
+  select {
+    all: unset;
+    margin-right: 10px;
+    position: absolute;
+    right: 20px;
+    top: 19px;
+    border-radius: 5px;
+    height: 40px;
+
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: underline;
+  }
+
   .navbar-container {
     position: relative;
     padding: 42px 58px 0;
@@ -78,6 +111,7 @@
   }
 
   .pages {
+    position: absolute;
     z-index: 10;
     display: flex;
     column-gap: 17px;

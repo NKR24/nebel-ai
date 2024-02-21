@@ -1,6 +1,9 @@
 <script lang="ts">
   import { contact } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
+
+  import { t } from "$lib/translations"
+
   let showContactForm = $state(false)
 
   function toggleContactForm() {
@@ -19,10 +22,10 @@
 </script>
 
 <main class="page">
-  <h1 class="title">Welcome to Nebel.</h1>
-  <h2 class="subtitle">Easy Solutions for Your Business and Personal Needs</h2>
+  <h1 class="title">{$t("main.title")}</h1>
+  <h2 class="subtitle">{$t("main.semi-title")}</h2>
   <button class="contactButton" onclick={toggleContactForm}>
-    Contact Us
+    {$t("main.button")}
   </button>
   <Modal isOpen={showContactForm} onClickAway={toggleContactForm}>
     <div class="modalText">
