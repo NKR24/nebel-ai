@@ -12,6 +12,7 @@ export const config = {
   translations: {
     en: { lang },
     ru: { lang },
+    de: { lang }
   },
   loaders: [
     {
@@ -69,6 +70,34 @@ export const config = {
       locale : "ru",
       key: "modal",
       loader: async () => (await import("./ru/modal.json")).default,
+    },
+    {
+      locale : "de",
+      key: "modal",
+      loader: async () => (await import("./de/modal.json")).default,
+    },
+    {
+      locale: "de",
+      key: "navbar",
+      loader: async () => (await import("./de/navbar.json")).default,
+    },
+    {
+      locale: "de",
+      key: "about",
+      routes: ["/about"],
+      loader: async () => (await import("./de/about.json")).default,
+    },
+    {
+      locale: "de",
+      key: "main",
+      routes: ["/"],
+      loader: async () => (await import("./de/main.json")).default,
+    },
+    {
+      locale: "de",
+      key: "portfolio",
+      routes: ["/portfolio"],
+      loader: async () => (await import("./de/portfolio.json")).default,
     },
   ],
 }
