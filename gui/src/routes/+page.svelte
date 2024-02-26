@@ -32,7 +32,7 @@
       <form onsubmit={handleContactFormSubmit} class="contactForm">
         <input
           class="input"
-          placeholder="Name *"
+          placeholder={$t("modal.name")}
           type="text"
           name="name"
           bind:value={name}
@@ -40,7 +40,7 @@
         />
         <input
           class="input"
-          placeholder="E-Mail *"
+          placeholder={$t("modal.email")}
           type="email"
           name="email"
           bind:value={email}
@@ -48,13 +48,15 @@
         />
         <textarea
           class="textarea"
-          placeholder="Message *"
+          placeholder={$t("modal.message")}
           name="message"
           bind:value={message}
           required
         />
         <div class="contactFormButtons">
-          <button type="submit" class="submitButton"> Submit </button>
+          <button type="submit" class="submitButton">
+            {$t("modal.submit")}
+          </button>
         </div>
       </form>
     </div>
@@ -142,7 +144,12 @@
   .submitButton {
     @extend .contactFormButton;
 
-    max-width: 50px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+
     background-image: linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
     background-image: -webkit-linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
   }
@@ -172,7 +179,9 @@
     opacity: 1;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    width: 134px;
+    width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
     height: 62px;
 
     color: rgba(0, 0, 0, 1);

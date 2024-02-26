@@ -15,6 +15,11 @@ export const config = {
   },
   loaders: [
     {
+      locale : "en",
+      key: "modal",
+      loader: async () => (await import("./en/modal.json")).default,
+    },
+    {
       locale: "en",
       key: "navbar",
       loader: async () => (await import("./en/navbar.json")).default,
@@ -59,6 +64,11 @@ export const config = {
       key: "portfolio",
       routes: ["/portfolio"],
       loader: async () => (await import("./ru/portfolio.json")).default,
+    },
+    { 
+      locale : "ru",
+      key: "modal",
+      loader: async () => (await import("./ru/modal.json")).default,
     },
   ],
 }

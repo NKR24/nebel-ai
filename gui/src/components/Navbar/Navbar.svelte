@@ -82,7 +82,6 @@
   }
 
   .navbar-container {
-    position: relative;
     padding: 42px 58px 0;
     position: fixed;
     z-index: 10;
