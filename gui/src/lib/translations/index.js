@@ -12,11 +12,11 @@ export const config = {
   translations: {
     en: { lang },
     ru: { lang },
-    de: { lang }
+    de: { lang },
   },
   loaders: [
     {
-      locale : "en",
+      locale: "en",
       key: "modal",
       loader: async () => (await import("./en/modal.json")).default,
     },
@@ -44,6 +44,18 @@ export const config = {
       loader: async () => (await import("./en/portfolio.json")).default,
     },
     {
+      locale: "en",
+      key: "title",
+      routes: ["/portfolio"],
+      loader: async () => (await import("./en/title.json")).default,
+    },
+    {
+      locale: "en",
+      key: "title",
+      routes: ["/about"],
+      loader: async () => (await import("./en/title.json")).default,
+    },
+    {
       locale: "ru",
       key: "navbar",
       loader: async () => (await import("./ru/navbar.json")).default,
@@ -66,13 +78,25 @@ export const config = {
       routes: ["/portfolio"],
       loader: async () => (await import("./ru/portfolio.json")).default,
     },
-    { 
-      locale : "ru",
+    {
+      locale: "ru",
+      key: "title",
+      routes: ["/portfolio"],
+      loader: async () => (await import("./ru/title.json")).default,
+    },
+    {
+      locale: "ru",
+      key: "title",
+      routes: ["/about"],
+      loader: async () => (await import("./ru/title.json")).default,
+    },
+    {
+      locale: "ru",
       key: "modal",
       loader: async () => (await import("./ru/modal.json")).default,
     },
     {
-      locale : "de",
+      locale: "de",
       key: "modal",
       loader: async () => (await import("./de/modal.json")).default,
     },
@@ -98,6 +122,18 @@ export const config = {
       key: "portfolio",
       routes: ["/portfolio"],
       loader: async () => (await import("./de/portfolio.json")).default,
+    },
+    {
+      locale: "de",
+      key: "title",
+      routes: ["/portfolio"],
+      loader: async () => (await import("./de/title.json")).default,
+    },
+    {
+      locale: "de",
+      key: "title",
+      routes: ["/about"],
+      loader: async () => (await import("./de/title.json")).default,
     },
   ],
 }

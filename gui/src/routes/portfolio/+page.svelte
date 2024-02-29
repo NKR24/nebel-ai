@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Portfolio</title>
+  <title>{$t("title.portfolio")}</title>
   <meta name="description" content="Portfolio" />
 </svelte:head>
 

@@ -1,8 +1,12 @@
 <script lang="ts">
   import { t, locale, locales } from '$lib/translations';
 
-  const handleChange = ({ currentTarget }) => {
-    const { value } = currentTarget;
+  type Props = {
+    currentTarget: { value: string }
+  }
+
+  const handleChange = (props: Props) => {
+    const { value } = props.currentTarget;
 
     document.cookie = `lang=${value} ;`;
   };

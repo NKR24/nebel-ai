@@ -1,11 +1,9 @@
 <script>
-  import { page } from "$app/stores"
-  import { goto } from "$app/navigation"
-  import { t, locale, locales } from "$lib/translations"
+  import { t } from "$lib/translations"
 </script>
 
 <svelte:head>
-  <title>About</title>
+  <title>{$t("title.about")}</title>
   <meta name="description" content="About this app" />
 </svelte:head>
 

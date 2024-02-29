@@ -21,6 +21,11 @@
   }
 </script>
 
+<svelte:head>
+  <title>NebelAI</title>
+  <meta name="description" content="About this app" />
+</svelte:head>
+
 <main class="page">
   <h1 class="title">{$t("main.title")}</h1>
   <h2 class="subtitle">{$t("main.semi-title")}</h2>
