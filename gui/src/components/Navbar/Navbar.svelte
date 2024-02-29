@@ -1,7 +1,12 @@
-<script>
-  import { page } from "$app/stores"
-  import { goto } from "$app/navigation"
-  import { t, locale, locales } from "$lib/translations"
+<script lang="ts">
+  import { t, locale, locales } from '$lib/translations';
+
+  const handleChange = ({ currentTarget }) => {
+    const { value } = currentTarget;
+
+    document.cookie = `lang=${value} ;`;
+  };
+
 </script>
 
 <nav class="navbar-container">
@@ -30,14 +35,9 @@
         <span class="text">{$t("navbar.portfolio")}</span>
       </a>
     </div>
-    <select
-      on:change={({ currentTarget }) =>
-        goto(new URL(`?lang=${currentTarget.value}`, `${$page.url.href}`))}
-    >
+    <select bind:value="{$locale}" on:change={handleChange}>
       {#each $locales as value}
-        <option {value} selected={value === $locale}
-          >{$t(`lang.${value}`)}</option
-        >
+        <option value="{value}">{$t(`lang.${value}`)}</option>
       {/each}
     </select>
   </div>
