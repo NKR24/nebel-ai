@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { t, locale, locales } from '$lib/translations';
+  import { t, locale, locales } from "$lib/translations"
 
   type Props = {
     currentTarget: { value: string }
   }
 
   const handleChange = (props: Props) => {
-    const { value } = props.currentTarget;
+    const { value } = props.currentTarget
 
-    document.cookie = `lang=${value} ;`;
-  };
+    document.cookie = { value }
+  }
 
 </script>
 
@@ -39,24 +39,24 @@
         <span class="text">{$t("navbar.portfolio")}</span>
       </a>
     </div>
-    <select bind:value="{$locale}" on:change={handleChange}>
-      {#each $locales as value}
-        <option value="{value}">{$t(`lang.${value}`)}</option>
-      {/each}
-    </select>
+     <select bind:value="{$locale}" on:change={handleChange}>
+       {#each $locales as value}
+         <option value="{value}">{$t(`lang.${value}`)}</option>
+       {/each}
+     </select>
   </div>
 </nav>
 
 <style lang="scss">
-  option:hover{
+  option:hover {
     opacity: 0;
   }
 
-  option{
+  option {
     all: unset;
     color: white;
-    padding:  20px; /* Отступы */
-    border-bottom:  1px solid #ccc;
+    padding: 20px; /* Отступы */
+    border-bottom: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     background-color: rgb(19, 22, 31);
   }
@@ -119,10 +119,20 @@
     position: absolute;
     left: 20px;
     top: 19px;
+    transition: all 0.2s ease-in-out;
 
     @media (max-width: 768px) {
       left: 17px;
       top: 0;
+    }
+
+    &:hover {
+      transform: scale(1.07);
+    }
+
+    &:active {
+      transform: scale(1.04);
+      filter: brightness(0.7);
     }
   }
 
