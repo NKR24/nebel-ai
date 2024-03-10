@@ -1,6 +1,7 @@
 <script lang="ts">
   import { contact } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
+  import { t } from "../utils/i18n"
 
   let showContactForm = $state(false)
 
@@ -25,8 +26,8 @@
 </svelte:head>
 
 <main class="page">
-  <h1 class="title">main.title</h1>
-  <h2 class="subtitle">main.semi-title</h2>
+  <h1 class="title">{t.root$title()}</h1>
+  <h2 class="subtitle">{t.root$subtitle()}</h2>
   <button class="contactButton" onclick={toggleContactForm}>
     main.button
   </button>

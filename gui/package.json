@@ -3,16 +3,19 @@
   "version": "0.0.1",
   "scripts": {
     "start": "vite dev",
-    "build": "vite build",
+    "build": "paraglide-js compile --project ./project.inlang && vite build",
     "deploy": "bun run build && pm2 delete nebel.ai || true && pm2 start 'bun run build/index.js' --name 'nebel.ai'",
     "gen-api-types": "cd ../api && cargo test && cp -r bindings/* ../gui/src/api/types && rm bindings/",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "paraglide-js compile --project ./project.inlang"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^5.0.8",
+    "@inlang/paraglide-js": "1.2.7",
+    "@inlang/paraglide-js-adapter-sveltekit": "^0.5.5",
     "@neoconfetti/svelte": "^2.2.1",
     "@sveltejs/adapter-auto": "^3.1.1",
     "@sveltejs/adapter-node": "^4.0.1",
@@ -40,7 +43,6 @@
     "axios": "^1.6.7",
     "dotenv": "^16.4.4",
     "sass": "^1.70.0",
-    "sveltekit-i18n": "^2.4.2",
-    "zod": "^3.22.4"
+    "sveltekit-i18n": "^2.4.2"
   }
 }

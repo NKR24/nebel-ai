@@ -1,13 +1,11 @@
-<script lang="ts">
-  type Props = {
-    currentTarget: { value: string }
-  }
+<script>
+  import { route } from "../../consts"
 </script>
 
 <nav class="navbar-container">
   <div class="navbar">
     <div class="logo">
-      <a href="/">
+      <a href={route.root}>
         <svg
           width="40"
           height="38"
@@ -23,10 +21,10 @@
       </a>
     </div>
     <div class="pages">
-      <a href="/about">
+      <a href={route.about}>
         <span class="text">navbar.about</span>
       </a>
-      <a href="/portfolio">
+      <a href={route.portfolio}>
         <span class="text">navbar.portfolio</span>
       </a>
     </div>
