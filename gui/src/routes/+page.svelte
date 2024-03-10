@@ -2,8 +2,6 @@
   import { contact } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
 
-  import { t } from "$lib/translations"
-
   let showContactForm = $state(false)
 
   function toggleContactForm() {
@@ -27,17 +25,17 @@
 </svelte:head>
 
 <main class="page">
-  <h1 class="title">{$t("main.title")}</h1>
-  <h2 class="subtitle">{$t("main.semi-title")}</h2>
+  <h1 class="title">main.title</h1>
+  <h2 class="subtitle">main.semi-title</h2>
   <button class="contactButton" onclick={toggleContactForm}>
-    {$t("main.button")}
+    main.button
   </button>
   <Modal isOpen={showContactForm} onClickAway={toggleContactForm}>
     <div class="modalText">
       <form onsubmit={handleContactFormSubmit} class="contactForm">
         <input
           class="input"
-          placeholder={$t("modal.name")}
+          placeholder="modal.name"
           type="text"
           name="name"
           bind:value={name}
@@ -45,7 +43,7 @@
         />
         <input
           class="input"
-          placeholder={$t("modal.email")}
+          placeholder="modal.email"
           type="email"
           name="email"
           bind:value={email}
@@ -53,15 +51,13 @@
         />
         <textarea
           class="textarea"
-          placeholder={$t("modal.message")}
+          placeholder="modal.message"
           name="message"
           bind:value={message}
           required
         />
         <div class="contactFormButtons">
-          <button type="submit" class="submitButton">
-            {$t("modal.submit")}
-          </button>
+          <button type="submit" class="submitButton"> modal.submit </button>
         </div>
       </form>
     </div>

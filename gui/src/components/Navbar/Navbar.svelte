@@ -1,16 +1,7 @@
 <script lang="ts">
-  import { t, locale, locales } from "$lib/translations"
-
   type Props = {
     currentTarget: { value: string }
   }
-
-  const handleChange = (props: Props) => {
-    const { value } = props.currentTarget
-
-    document.cookie = { value }
-  }
-
 </script>
 
 <nav class="navbar-container">
@@ -33,17 +24,12 @@
     </div>
     <div class="pages">
       <a href="/about">
-        <span class="text">{$t("navbar.about")}</span>
+        <span class="text">navbar.about</span>
       </a>
       <a href="/portfolio">
-        <span class="text">{$t("navbar.portfolio")}</span>
+        <span class="text">navbar.portfolio</span>
       </a>
     </div>
-     <select bind:value="{$locale}" on:change={handleChange}>
-       {#each $locales as value}
-         <option value="{value}">{$t(`lang.${value}`)}</option>
-       {/each}
-     </select>
   </div>
 </nav>
 
