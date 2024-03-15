@@ -1,11 +1,14 @@
 <script lang="ts">
-  import { contact } from "../api/queries/contact"
+  import { goto } from "$app/navigation"
+  import { page } from "$app/stores"
+  import { setLanguageTag } from "$paraglide/runtime"
+  import { postContactForm } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
-  import { t } from "../utils/i18n"
+  import { i18n, t } from "../utils/i18n.svelte"
 
   let showContactForm = $state(false)
 
-  function toggleContactForm() {
+  function toggleContactFormVisibility() {
     showContactForm = !showContactForm
   }
 
@@ -15,9 +18,13 @@
 
   function handleContactFormSubmit(event: Event) {
     event.preventDefault()
-    toggleContactForm()
-    contact({ name, email, message })
+    toggleContactFormVisibility()
+    postContactForm({ name, email, message })
   }
+
+  // function handleLanguageSwitch() {
+  //   goto(i18n.resolveRoute($page.url.pathname, "de"))
+  // }
 </script>
 
 <svelte:head>
@@ -28,15 +35,15 @@
 <main class="page">
   <h1 class="title">{t.root$title()}</h1>
   <h2 class="subtitle">{t.root$subtitle()}</h2>
-  <button class="contactButton" onclick={toggleContactForm}>
+  <button class="contactButton" onclick={toggleContactFormVisibility}>
     {t.root$button()}
   </button>
-  <Modal isOpen={showContactForm} onClickAway={toggleContactForm}>
+  <Modal isOpen={showContactForm} onClickAway={toggleContactFormVisibility}>
     <div class="modalText">
       <form onsubmit={handleContactFormSubmit} class="contactForm">
         <input
           class="input"
-          placeholder={t.root$modalName()}
+          placeholder={t?.root$modalName()}
           type="text"
           name="name"
           bind:value={name}
@@ -44,7 +51,7 @@
         />
         <input
           class="input"
-          placeholder={t.root$modalEmail()}
+          placeholder={t?.root$modalEmail()}
           type="email"
           name="email"
           bind:value={email}
@@ -52,14 +59,14 @@
         />
         <textarea
           class="textarea"
-          placeholder={t.root$modalMessage()}
+          placeholder={t?.root$modalMessage()}
           name="message"
           bind:value={message}
           required
         />
         <div class="contactFormButtons">
           <button type="submit" class="submitButton">
-            {t.root$modalSubmit()}
+            {t?.root$modalSubmit()}
           </button>
         </div>
       </form>

@@ -1,11 +1,16 @@
 <script>
   import Navbar from "../components/Navbar/Navbar.svelte"
   import Starfield from "../components/Starfield/Starfield.svelte"
+  import { ParaglideJS } from "@inlang/paraglide-js-adapter-sveltekit"
+  import { i18n } from "../utils/i18n.svelte"
 </script>
 
 <Starfield />
-<Navbar />
-<slot />
+
+<ParaglideJS {i18n}>
+  <Navbar />
+  <slot />
+</ParaglideJS>
 
 <style>
   :global(body) {
@@ -17,6 +22,11 @@
   :global(button, input, textarea) {
     all: unset;
   }
+
+  :global(button) {
+    cursor: pointer !important;
+  }
+
   :global(html, body, #app) {
     height: 100%;
     margin: 0;

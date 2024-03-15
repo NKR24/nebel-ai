@@ -1,11 +1,6 @@
 <script lang="ts">
-  import { t } from "../../utils/i18n"
   import { route } from "../../consts"
-  import { setLanguageTag } from "$paraglide/runtime"
-
-  function handleChange() {
-    setLanguageTag("de")
-  }
+  import { t } from "../../utils/i18n.svelte"
 </script>
 
 <nav class="navbar-container">
@@ -34,7 +29,6 @@
         <span class="text">{t.navbar$portfolio()}</span>
       </a>
     </div>
-    <button onclick={handleChange}>go to de</button>
   </div>
 </nav>
 

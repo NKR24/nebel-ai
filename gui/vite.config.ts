@@ -8,6 +8,7 @@ export default defineConfig({
     paraglide({
       project: "./project.inlang",
       outdir: "./src/paraglide",
+      // disablePreprocessor: true,
     }),
   ],
   server: {
