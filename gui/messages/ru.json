@@ -1,0 +1,14 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "root$title": "Добро Пожаловать в Nebel",
+  "root$subtitle": "Простые Решения Для Вашего Бизнеса И Персональных Нужд",
+  "root$button": "Связаться с нами",
+  "root$modalName": "Имя",
+  "root$modalEmail": "Email",
+  "root$modalMessage": "Ваше сообщение",
+  "root$modalSubmit": "Отправить",
+  "navbar$about": "О Нас",
+  "navbar$portfolio": "Портфолио",
+  "about$about": "О Нас",
+  "portfolio$portfolio": "Портфолио"
+}

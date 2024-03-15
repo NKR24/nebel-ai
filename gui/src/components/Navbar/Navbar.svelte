@@ -1,5 +1,11 @@
-<script>
+<script lang="ts">
+  import { t } from "../../utils/i18n"
   import { route } from "../../consts"
+  import { setLanguageTag } from "$paraglide/runtime"
+
+  function handleChange() {
+    setLanguageTag("ru")
+  }
 </script>
 
 <nav class="navbar-container">
@@ -22,10 +28,10 @@
     </div>
     <div class="pages">
       <a href={route.about}>
-        <span class="text">navbar.about</span>
+        <span class="text">{t.navbar$about()}</span>
       </a>
       <a href={route.portfolio}>
-        <span class="text">navbar.portfolio</span>
+        <span class="text">{t.navbar$portfolio()}</span>
       </a>
     </div>
   </div>

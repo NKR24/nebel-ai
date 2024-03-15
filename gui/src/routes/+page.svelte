@@ -29,14 +29,14 @@
   <h1 class="title">{t.root$title()}</h1>
   <h2 class="subtitle">{t.root$subtitle()}</h2>
   <button class="contactButton" onclick={toggleContactForm}>
-    main.button
+    {t.root$button()}
   </button>
   <Modal isOpen={showContactForm} onClickAway={toggleContactForm}>
     <div class="modalText">
       <form onsubmit={handleContactFormSubmit} class="contactForm">
         <input
           class="input"
-          placeholder="modal.name"
+          placeholder={t.root$modalName()}
           type="text"
           name="name"
           bind:value={name}
@@ -44,7 +44,7 @@
         />
         <input
           class="input"
-          placeholder="modal.email"
+          placeholder={t.root$modalEmail()}
           type="email"
           name="email"
           bind:value={email}
@@ -52,13 +52,15 @@
         />
         <textarea
           class="textarea"
-          placeholder="modal.message"
+          placeholder={t.root$modalMessage()}
           name="message"
           bind:value={message}
           required
         />
         <div class="contactFormButtons">
-          <button type="submit" class="submitButton"> modal.submit </button>
+          <button type="submit" class="submitButton">
+            {t.root$modalSubmit()}
+          </button>
         </div>
       </form>
     </div>
