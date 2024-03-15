@@ -4,7 +4,7 @@
   import { setLanguageTag } from "$paraglide/runtime"
 
   function handleChange() {
-    setLanguageTag("ru")
+    setLanguageTag("de")
   }
 </script>
 
@@ -34,12 +34,19 @@
         <span class="text">{t.navbar$portfolio()}</span>
       </a>
     </div>
+    <button onclick={handleChange}>go to de</button>
   </div>
 </nav>
 
 <style lang="scss">
   option:hover {
     opacity: 0;
+  }
+
+  button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
   }
 
   option {
@@ -51,7 +58,7 @@
     background-color: rgb(19, 22, 31);
   }
 
-  select {
+  button {
     all: unset;
     margin-right: 10px;
     position: absolute;
