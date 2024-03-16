@@ -10,3 +10,7 @@ hbh.nebel.ai {
 api.nebel.ai {
 	reverse_proxy :3021
 }
+
+eight.nebel.ai {
+	reverse_proxy :3040
+}
