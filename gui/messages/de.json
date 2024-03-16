@@ -6,9 +6,9 @@
   "root$modalName": "Name",
   "root$modalEmail": "Email",
   "root$modalMessage": "Nachricht",
-  "root$modalSubmit": "Einreichen",
-  "navbar$about": "Um",
+  "root$modalSubmit": "Kontaktieren Sie uns",
+  "navbar$about": "Über uns",
   "navbar$portfolio": "Portfolio",
-  "about$about": "Um",
+  "about$about": "Über uns",
   "portfolio$portfolio": "Portfolio"
 }
