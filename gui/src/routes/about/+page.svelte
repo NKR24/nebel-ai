@@ -3,8 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>title.about</title>
-  <meta name="description" content="We build websites and apps for you" />
+  <title>{t.navbar$about()}</title>
 </svelte:head>
 
 <main>

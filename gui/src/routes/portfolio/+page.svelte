@@ -3,8 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>title.portfolio</title>
-  <meta name="description" content="Portfolio" />
+  <title>{t.navbar$portfolio()}</title>
 </svelte:head>
 
 <main>
