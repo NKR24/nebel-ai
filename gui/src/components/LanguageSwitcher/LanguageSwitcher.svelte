@@ -5,6 +5,7 @@
   import { goto } from "$app/navigation"
 
   function handleLanguageSwitch(event: Event) {
+    // eslint-disable-next-line svelte/valid-compile
     const url = $page.url.pathname.replace(
       new RegExp(`/${availableLanguageTags.join("|")}`, "i"),
       ""

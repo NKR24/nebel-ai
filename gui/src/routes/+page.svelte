@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { languageTag } from "$paraglide/runtime"
   import { postContactForm } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
   import { t } from "../utils/i18n.svelte"
 
-  const isPageNonEnglish = languageTag() !== "en"
   let showContactForm = $state(false)
 
   function toggleContactFormVisibility() {
