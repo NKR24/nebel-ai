@@ -12,7 +12,9 @@
       new RegExp(`/${availableLanguageTags.join("|")}`, "i"),
       ""
     )
-    const lang = (event?.currentTarget as unknown as { value: Language })?.value
+    const lang = (
+      event?.currentTarget as unknown as { value: string }
+    )?.value?.toLowerCase() as Language
 
     if (lang === "ru") {
       loadCyrillicFont()
@@ -23,10 +25,10 @@
   }
 </script>
 
-<select value={languageTag()} onchange={handleLanguageSwitch}>
+<select value={languageTag().toUpperCase()} onchange={handleLanguageSwitch}>
   {#each availableLanguageTags as language}
-    <option value={language} selected={language === languageTag()}
-      >{language}</option
+    <option value={language.toUpperCase()} selected={language === languageTag()}
+      >{language.toUpperCase()}</option
     >
   {/each}
 </select>
@@ -48,26 +50,10 @@
   select {
     all: unset;
     cursor: pointer;
-    margin-right: 10px;
     position: absolute;
     right: 20px;
-    top: 19px;
-    border-radius: 5px;
-    height: 40px;
 
-    opacity: 1;
-    color: rgba(255, 255, 255, 1);
     font-size: 24px;
     font-weight: 700;
-    text-align: center;
-    text-decoration: underline;
-
-    appearance: none;
-    -webkit-appearance: none;
-
-    @media (max-width: 768px) {
-      right: 17px;
-      top: 6px;
-    }
   }
 </style>
