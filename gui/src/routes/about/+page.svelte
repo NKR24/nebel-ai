@@ -4,7 +4,7 @@
 
 <svelte:head>
   <title>title.about</title>
-  <meta name="description" content="About this app" />
+  <meta name="description" content="We build websites and apps for you" />
 </svelte:head>
 
 <main>

@@ -22,7 +22,6 @@
 
 <svelte:head>
   <title>NebelAI</title>
-  <meta name="description" content="About this app" />
 </svelte:head>
 
 <main class="page">
