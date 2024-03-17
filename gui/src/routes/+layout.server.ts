@@ -10,7 +10,7 @@ export const load: ServerLoad = ({ url, cookies }) => {
   )
   const openingPageWithoutSpecifyingLanguage =
     pathname === pathnameWithoutLanguageTag
-  const lang = (cookies.get("lang") ?? "en") as Language | undefined
+  const lang = cookies.get("lang") as Language | undefined
 
   if (openingPageWithoutSpecifyingLanguage && lang && lang !== "en") {
     const newUrlWithLanguageTag = i18n.resolveRoute(
