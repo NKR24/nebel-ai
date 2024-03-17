@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { languageTag } from "$paraglide/runtime"
   import { postContactForm } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
   import { t } from "../utils/i18n.svelte"
 
+  const isPageNonEnglish = languageTag() !== "en"
   let showContactForm = $state(false)
 
   function toggleContactFormVisibility() {
@@ -26,7 +28,9 @@
 </svelte:head>
 
 <main class="page">
-  <h1 class="title">{t.root$title()}</h1>
+  <h1 class="title">
+    {t.root$title()}
+  </h1>
   <h2 class="subtitle">{t.root$subtitle()}</h2>
   <button class="contactButton" onclick={toggleContactFormVisibility}>
     {t.root$button()}
@@ -234,12 +238,11 @@
 
     @media (max-width: 768px) {
       font-size: 15px;
-      width: 205px;
+      max-width: 285px;
     }
   }
 
   .title {
-    // font color
     color: #775be2;
     background-image: linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
     background-image: -webkit-linear-gradient(-75deg, #775be2 25%, #ce59b6 65%);
@@ -247,6 +250,7 @@
     color: transparent;
     -webkit-text-fill-color: transparent;
     font-weight: 900;
+    text-align: center;
 
     // glow effect
     filter: drop-shadow(0px 0px 80px rgba(206, 89, 182, 0.4));
@@ -266,15 +270,15 @@
 
     @media (max-width: 768px) {
       font-size: clamp(
-        2.247321025468409rem,
+        2.247321025468409em,
         calc(
-          2.247321025468409rem +
+          2.247321025468409em +
             (
               (4.449725439999998 - 2.247321025468409) *
-                ((100vw - 20rem) / (96 - 20))
+                ((100vw - 20em) / (96 - 20))
             )
         ),
-        4.449725439999998rem
+        4.449725439999998em
       );
     }
   }
