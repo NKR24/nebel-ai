@@ -1,10 +1,7 @@
 <script lang="ts">
-  import { goto } from "$app/navigation"
-  import { page } from "$app/stores"
-  import { setLanguageTag } from "$paraglide/runtime"
   import { postContactForm } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
-  import { i18n, t } from "../utils/i18n.svelte"
+  import { t } from "../utils/i18n.svelte"
 
   let showContactForm = $state(false)
 
@@ -21,10 +18,6 @@
     toggleContactFormVisibility()
     postContactForm({ name, email, message })
   }
-
-  // function handleLanguageSwitch() {
-  //   goto(i18n.resolveRoute($page.url.pathname, "de"))
-  // }
 </script>
 
 <svelte:head>
@@ -215,7 +208,7 @@
       position: fixed;
       bottom: 82px;
       right: 15px;
-      width: 99px;
+      min-width: 99px;
       height: 39px;
       font-size: 15px;
     }

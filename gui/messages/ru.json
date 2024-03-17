@@ -2,7 +2,7 @@
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "root$title": "Добро Пожаловать в Nebel",
   "root$subtitle": "Простые Решения Для Вашего Бизнеса И Персональных Нужд",
-  "root$button": "Связаться с нами",
+  "root$button": "Связаться с Нами",
   "root$modalName": "Имя",
   "root$modalEmail": "Email",
   "root$modalMessage": "Ваше сообщение",
