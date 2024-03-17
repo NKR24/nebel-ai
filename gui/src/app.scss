@@ -1,0 +1,48 @@
+body {
+  font-family: "specter", "Rubik", sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+button,
+input,
+textarea {
+  all: unset;
+}
+
+button {
+  cursor: pointer !important;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  background: #0c0e14 radial-gradient(#111921 0%, #090a0f 100%);
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 45px;
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}

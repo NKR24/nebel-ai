@@ -5,6 +5,7 @@
   import { i18n } from "../utils/i18n.svelte"
   import { languageTag } from "$paraglide/runtime"
   import { loadCyrillicFont } from "../utils/css"
+  import "../app.scss"
 
   $effect(() => {
     if (languageTag() === "ru") {
@@ -19,32 +20,3 @@
   <Navbar />
   <slot />
 </ParaglideJS>
-
-<style>
-  :global(body) {
-    font-family: "specter", "Rubik", sans-serif;
-    font-weight: 300;
-    color: white;
-  }
-
-  :global(button, input, textarea) {
-    all: unset;
-  }
-
-  :global(button) {
-    cursor: pointer !important;
-  }
-
-  :global(html, body, #app) {
-    height: 100%;
-    margin: 0;
-  }
-
-  :global(html) {
-    background: #0c0e14 radial-gradient(#111921 0%, #090a0f 100%);
-  }
-
-  :global(h1, h2) {
-    margin: 0;
-  }
-</style>

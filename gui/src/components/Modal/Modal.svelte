@@ -2,11 +2,13 @@
   import type { Snippet } from "svelte"
   import { fade } from "svelte/transition"
 
-  const { isOpen, onClickAway, children } = $props<{
+  type Props = {
     isOpen: boolean
     onClickAway?: () => void
     children: Snippet
-  }>()
+  }
+
+  const { isOpen, onClickAway, children }: Props = $props()
 </script>
 
 {#if isOpen}

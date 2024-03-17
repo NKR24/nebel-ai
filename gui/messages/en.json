@@ -7,8 +7,13 @@
   "root$modalEmail": "E-Mail",
   "root$modalMessage": "Message",
   "root$modalSubmit": "Submit",
+
   "navbar$about": "About",
   "navbar$portfolio": "Portfolio",
+
   "about$about": "About",
+  "about$heading": "We build websites and apps for you",
+  "about$message": "In today's fast-paced digital world, your website and applications are the gateways to customer engagement. Nebel AI is your dedicated partner for crafting cutting-edge web solutions. We don't just build websites; we create immersive online experiences that seamlessly align with your business goals. From intuitive user interfaces to robust back-end functionality, our team expertly blends technology and design to deliver exceptional digital products.",
+
   "portfolio$portfolio": "Portfolio"
 }
