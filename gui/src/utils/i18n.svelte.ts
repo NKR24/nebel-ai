@@ -4,3 +4,5 @@ import * as messages from "$paraglide/messages"
 
 export const i18n = createI18n(runtime)
 export const t = messages
+
+export type Language = (typeof runtime.availableLanguageTags)[number]

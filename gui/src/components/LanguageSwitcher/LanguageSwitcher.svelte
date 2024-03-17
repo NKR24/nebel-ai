@@ -1,8 +1,9 @@
 <script lang="ts">
   import { availableLanguageTags, languageTag } from "$paraglide/runtime"
-  import { i18n } from "../../utils/i18n.svelte"
+  import { i18n, type Language } from "../../utils/i18n.svelte"
   import { page } from "$app/stores"
   import { goto } from "$app/navigation"
+  import cookies from "js-cookie"
 
   function handleLanguageSwitch(event: Event) {
     // eslint-disable-next-line svelte/valid-compile
@@ -10,14 +11,10 @@
       new RegExp(`/${availableLanguageTags.join("|")}`, "i"),
       ""
     )
+    const lang = (event?.currentTarget as unknown as { value: Language })?.value
 
-    goto(
-      i18n.resolveRoute(
-        url,
-        (event?.currentTarget as unknown as { value: string })
-          ?.value as (typeof availableLanguageTags)[number]
-      )
-    )
+    cookies.set("lang", lang)
+    goto(i18n.resolveRoute(url, lang))
   }
 </script>
 
