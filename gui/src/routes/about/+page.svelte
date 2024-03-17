@@ -11,9 +11,14 @@
 
 <PageWrapper title={t.about$about()} maxWidth="80ch">
   <h1 class={styleHelpers.title}>{t.about$heading()}</h1>
-  <enhanced:img src={gojover} alt="Gojover" sizes="min(300px, 100%)" />
+  <enhanced:img src={gojover} alt="Gojover" class="gojover" />
   <p>{t.about$message()}</p>
 </PageWrapper>
 
 <style>
+  .gojover {
+    max-width: 95%;
+    padding-top: 16px;
+    height: unset;
+  }
 </style>
