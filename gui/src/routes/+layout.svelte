@@ -3,6 +3,14 @@
   import Starfield from "../components/Starfield/Starfield.svelte"
   import { ParaglideJS } from "@inlang/paraglide-js-adapter-sveltekit"
   import { i18n } from "../utils/i18n.svelte"
+  import { languageTag } from "$paraglide/runtime"
+  import { loadCyrillicFont } from "../utils/css"
+
+  $effect(() => {
+    if (languageTag() === "ru") {
+      loadCyrillicFont()
+    }
+  })
 </script>
 
 <Starfield />
@@ -14,7 +22,7 @@
 
 <style>
   :global(body) {
-    font-family: "specter", sans-serif;
+    font-family: "specter", "Rubik", sans-serif;
     font-weight: 300;
     color: white;
   }

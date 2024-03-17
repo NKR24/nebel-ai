@@ -4,6 +4,7 @@
   import { page } from "$app/stores"
   import { goto } from "$app/navigation"
   import cookies from "js-cookie"
+  import { loadCyrillicFont } from "../../utils/css"
 
   function handleLanguageSwitch(event: Event) {
     // eslint-disable-next-line svelte/valid-compile
@@ -12,6 +13,10 @@
       ""
     )
     const lang = (event?.currentTarget as unknown as { value: Language })?.value
+
+    if (lang === "ru") {
+      loadCyrillicFont()
+    }
 
     cookies.set("lang", lang)
     goto(i18n.resolveRoute(url, lang))
