@@ -1,0 +1,14 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "root$title": "「Nebel」へようこそ",
+  "root$subtitle": "あなたのビジネスと個人のニーズに対する簡単な解決策",
+  "root$button": "お問い合わせ",
+  "root$modalName": "名前",
+  "root$modalEmail": "Eメール",
+  "root$modalMessage": "メッセージ",
+  "root$modalSubmit": "送信",
+  "navbar$about": "約",
+  "navbar$portfolio": "ポートフォリオ",
+  "about$about": "約",
+  "portfolio$portfolio": "ポートフォリオ"
+}
