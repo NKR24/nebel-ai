@@ -18,7 +18,6 @@ export const load: ServerLoad = ({ url, cookies }) => {
       lang
     )
 
-    console.log({ lang, newUrlWithLanguageTag })
     redirect(302, newUrlWithLanguageTag)
   }
 }
