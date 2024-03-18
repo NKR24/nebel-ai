@@ -20,10 +20,6 @@
   }
 </script>
 
-<svelte:head>
-  <title>NebelAI</title>
-</svelte:head>
-
 <main class="page">
   <h1 class="title">
     {t.root$title()}
