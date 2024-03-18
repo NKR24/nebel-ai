@@ -2,7 +2,7 @@
   import PageWrapper from "../../components/PageWrapper/PageWrapper.svelte"
   import { t } from "../../utils/i18n.svelte"
   import styleHelpers from "$utils/helpers.module.scss"
-  import gojover from "$img/gojover.jpg"
+  import gojover from "$img/gojover.jpg.webp"
 </script>
 
 <PageWrapper title={t.about$about()} maxWidth="80ch">

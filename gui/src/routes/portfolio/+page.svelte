@@ -2,7 +2,7 @@
   import PageWrapper from "../../components/PageWrapper/PageWrapper.svelte"
   import { t } from "../../utils/i18n.svelte"
   import styleHelpers from "$utils/helpers.module.scss"
-  import nahIdLive from "$img/nahIdLive.png"
+  import nahIdLive from "$img/nahIdLive.png.webp"
   import sadRuby from "$img/sadRuby.gif"
 </script>
 

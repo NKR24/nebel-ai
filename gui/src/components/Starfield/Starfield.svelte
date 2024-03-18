@@ -11,6 +11,12 @@
     height: 250%;
     width: 100%;
     overflow: hidden;
+
+    @media (min-width: 1920px) {
+      width: 1920px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   .stars,
