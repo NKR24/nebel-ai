@@ -12,7 +12,7 @@
       loadCyrillicFont()
     }
 
-    if (languageTag() === "jp") {
+    if (languageTag() === "ja") {
       loadJapaneseFont()
     }
   })

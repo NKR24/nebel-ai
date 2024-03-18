@@ -20,7 +20,7 @@
       loadCyrillicFont()
     }
 
-    if (lang === "jp") {
+    if (lang === "ja") {
       loadJapaneseFont()
     }
 
