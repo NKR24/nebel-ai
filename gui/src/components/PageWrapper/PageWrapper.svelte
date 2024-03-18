@@ -23,7 +23,7 @@
   main {
     max-width: var(--maxWidth);
     margin: auto;
-    --verticalOffset: 230px;
+    --verticalOffset: calc(100px - (10vh * -1));
     --horizontalOffset: 150px;
 
     @media (max-width: 768px) {
