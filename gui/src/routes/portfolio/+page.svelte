@@ -8,13 +8,13 @@
 
 <PageWrapper title={t.portfolio$portfolio()} maxWidth="80ch">
   <h1 class={styleHelpers.title}>{t.portfolio$heading()}</h1>
-  <img src={nahIdLive} alt="Gojover" class="gojover" />
+  <img src={nahIdLive} alt="Strongest idol" class="nahIdLive" />
   <p>{t.portfolio$message()}</p>
   <img src={sadRuby} alt="Sad Ruby" class="sadRuby" />
 </PageWrapper>
 
 <style>
-  .gojover {
+  .nahIdLive {
     max-width: 95%;
     padding-top: 16px;
     height: unset;
