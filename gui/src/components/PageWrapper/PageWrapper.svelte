@@ -27,7 +27,7 @@
     --horizontalOffset: 150px;
 
     @media (max-width: 768px) {
-      --verticalOffset: 40px;
+      --verticalOffset: 20px;
       --horizontalOffset: 20px;
     }
 
