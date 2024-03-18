@@ -4,7 +4,7 @@
   import { page } from "$app/stores"
   import { goto } from "$app/navigation"
   import cookies from "js-cookie"
-  import { loadCyrillicFont } from "../../utils/css"
+  import { loadCyrillicFont, loadJapaneseFont } from "../../utils/css"
 
   function handleLanguageSwitch(event: Event) {
     // eslint-disable-next-line svelte/valid-compile
@@ -18,6 +18,10 @@
 
     if (lang === "ru") {
       loadCyrillicFont()
+    }
+
+    if (lang === "jp") {
+      loadJapaneseFont()
     }
 
     cookies.set("lang", lang)

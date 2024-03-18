@@ -4,6 +4,12 @@ export function loadCyrillicFont() {
   )
 }
 
+export function loadJapaneseFont() {
+  addCss(
+    "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+  )
+}
+
 function addCss(url: string) {
   const head = document.head
   const link = document.createElement("link")

@@ -4,12 +4,16 @@
   import { ParaglideJS } from "@inlang/paraglide-js-adapter-sveltekit"
   import { i18n } from "../utils/i18n.svelte"
   import { languageTag } from "$paraglide/runtime"
-  import { loadCyrillicFont } from "../utils/css"
+  import { loadCyrillicFont, loadJapaneseFont } from "../utils/css"
   import "../app.scss"
 
   $effect(() => {
     if (languageTag() === "ru") {
       loadCyrillicFont()
+    }
+
+    if (languageTag() === "jp") {
+      loadJapaneseFont()
     }
   })
 </script>
