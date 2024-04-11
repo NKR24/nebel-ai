@@ -7,6 +7,10 @@
   "root$modalEmail": "Email",
   "root$modalMessage": "Ваше сообщение",
   "root$modalSubmit": "Отправить",
+  "root$toasterTitleSuccess": "Успех",
+  "root$toasterDescriptionSuccess": "Ваша заявка отправлена!",
+  "root$toasterTitleFailure": "Ошибка",
+  "root$toasterDescriptionFailure": "Что то пошло не так!",
 
   "navbar$about": "О Нас",
   "navbar$portfolio": "Портфолио",

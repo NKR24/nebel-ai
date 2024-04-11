@@ -7,6 +7,10 @@
   "root$modalEmail": "E-Mail",
   "root$modalMessage": "Message",
   "root$modalSubmit": "Submit",
+  "root$toasterTitleSuccess": "Success",
+  "root$toasterDescriptionSuccess": "Your request has been sent!",
+  "root$toasterTitleFailure": "Failure",
+  "root$toasterDescriptionFailure": "Something went wrong!",
 
   "navbar$about": "About",
   "navbar$portfolio": "Portfolio",
@@ -18,4 +22,6 @@
   "portfolio$portfolio": "Portfolio",
   "portfolio$heading": "Here are some of our creations",
   "portfolio$message": "Nothing to show yet."
+
+
 }

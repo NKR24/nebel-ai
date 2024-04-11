@@ -1,9 +1,11 @@
 <script lang="ts">
   import { postContactForm } from "../api/queries/contact"
   import Modal from "../components/Modal/Modal.svelte"
+  import { addToast } from "../components/Toaster/Toaster.svelte"
   import { t } from "../utils/i18n.svelte"
 
   let showContactForm = $state(false)
+  let isLoading = $state(false)
 
   function toggleContactFormVisibility() {
     showContactForm = !showContactForm
@@ -13,10 +15,37 @@
   let email: string = $state("")
   let message: string = $state("")
 
+  function toasterCreate(title: string, description: string, color: string) {
+    addToast({
+      data: {
+        title,
+        description,
+        color,
+      },
+    })
+  }
+
   function handleContactFormSubmit(event: Event) {
     event.preventDefault()
-    toggleContactFormVisibility()
+    isLoading = true
     postContactForm({ name, email, message })
+      .then(() => {
+        toasterCreate(
+          t.root$toasterTitleSuccess(),
+          t.root$toasterDescriptionSuccess(),
+          "#008000"
+        )
+        toggleContactFormVisibility()
+      })
+      .catch(() => {
+        toasterCreate(
+          t.root$toasterTitleFailure(),
+          t.root$toasterDescriptionFailure(),
+          "#EF5350"
+        )
+      })
+      .finally(() => (isLoading = false))
+    // create()
   }
 </script>
 
@@ -56,7 +85,11 @@
         />
         <div class="contactFormButtons">
           <button type="submit" class="submitButton">
-            {t?.root$modalSubmit()}
+            {#if isLoading}
+              <span class="loader"></span>
+            {:else}
+              {t?.root$modalSubmit()}
+            {/if}
           </button>
         </div>
       </form>
@@ -273,6 +306,47 @@
         ),
         4.449725439999998em
       );
+    }
+  }
+
+  .loader {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+  }
+  .loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    animation: prixClipFix 2s linear infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes prixClipFix {
+    0% {
+      clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    }
+    25% {
+      clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+    }
+    50% {
+      clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+    }
+    75% {
+      clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+    }
+    100% {
+      clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
     }
   }
 </style>

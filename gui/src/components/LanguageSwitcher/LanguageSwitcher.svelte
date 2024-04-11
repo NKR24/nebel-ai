@@ -49,7 +49,12 @@
       <Select.Value placeholder={languageTag().toUpperCase()} />
     </Select.Trigger>
 
-    <Select.Content class={styles.content} overlap={true} transition={fade} transitionConfig={{duration:150}}>
+    <Select.Content
+      class={styles.content}
+      overlap={true}
+      transition={fade}
+      transitionConfig={{ duration: 150 }}
+    >
       {#each availableLanguageItems as language}
         <Select.Item
           class={styles.item}
