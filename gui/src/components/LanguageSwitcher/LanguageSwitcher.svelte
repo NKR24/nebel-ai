@@ -5,16 +5,19 @@
   import { goto } from "$app/navigation"
   import cookies from "js-cookie"
   import { loadCyrillicFont, loadJapaneseFont } from "../../utils/css"
+  import { Select, type Selected } from "bits-ui"
+  import styles from "./LanguageSwitcher.module.scss"
+  import Check from "../Icons/Check.svelte"
+  import { fade } from "svelte/transition"
 
-  function handleLanguageSwitch(event: Event) {
+  function handleLanguageSwitch(selected: Selected<string> | undefined) {
     // eslint-disable-next-line svelte/valid-compile
     const url = $page.url.pathname.replace(
       new RegExp(`/${availableLanguageTags.join("|")}`, "i"),
       ""
     )
-    const lang = (
-      event?.currentTarget as unknown as { value: string }
-    )?.value?.toLowerCase() as Language
+
+    const lang = selected?.value.toLowerCase() as Language
 
     if (lang === "ru") {
       loadCyrillicFont()
@@ -27,37 +30,41 @@
     cookies.set("lang", lang)
     goto(i18n.resolveRoute(url, lang))
   }
+
+  const availableLanguageItems = availableLanguageTags
+    .filter((elem) => elem !== languageTag())
+    .map((elem) => ({
+      value: elem.toUpperCase(),
+    }))
 </script>
 
-<select value={languageTag().toUpperCase()} onchange={handleLanguageSwitch}>
-  {#each availableLanguageTags as language}
-    <option value={language.toUpperCase()} selected={language === languageTag()}
-      >{language.toUpperCase()}</option
-    >
-  {/each}
-</select>
+<div class={styles.select}>
+  <Select.Root
+    items={availableLanguageItems}
+    selected={{ value: languageTag().toUpperCase() }}
+    onSelectedChange={handleLanguageSwitch}
+    preventScroll={false}
+  >
+    <Select.Trigger>
+      <Select.Value placeholder={languageTag().toUpperCase()} />
+    </Select.Trigger>
+
+    <Select.Content class={styles.content} overlap={true} transition={fade} transitionConfig={{duration:150}}>
+      {#each availableLanguageItems as language}
+        <Select.Item
+          class={styles.item}
+          value={language.value}
+          label={language.value}
+        >
+          {language.value}
+          <Select.ItemIndicator class={styles.itemIndicator} asChild={false}>
+            <Check />
+          </Select.ItemIndicator>
+        </Select.Item>
+      {/each}
+    </Select.Content>
+  </Select.Root>
+</div>
 
 <style lang="scss">
-  option:hover {
-    opacity: 0;
-  }
-
-  option {
-    all: unset;
-    color: white;
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgb(19, 22, 31);
-  }
-
-  select {
-    all: unset;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-
-    font-size: 24px;
-    font-weight: 700;
-  }
 </style>
