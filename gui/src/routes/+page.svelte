@@ -27,6 +27,9 @@
 
   function handleContactFormSubmit(event: Event) {
     event.preventDefault()
+
+    if (isLoading) return
+
     isLoading = true
     postContactForm({ name, email, message })
       .then(() => {
@@ -45,7 +48,6 @@
         )
       })
       .finally(() => (isLoading = false))
-    // create()
   }
 </script>
 
