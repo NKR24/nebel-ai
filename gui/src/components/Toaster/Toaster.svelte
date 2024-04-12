@@ -18,29 +18,32 @@
 <script lang="ts">
   import { createToaster, melt } from "@melt-ui/svelte"
   import Cross from "../Icons/Cross.svelte"
+  import { fade } from "svelte/transition"
 </script>
 
 <div use:portal class="toasterWrapper">
   {#each $toasts as { id, data } (id)}
-    <div use:melt={$content(id)} class="toaster">
+    <div
+      use:melt={$content(id)}
+      class="toaster"
+      transition:fade={{ delay: 250, duration: 300 }}
+    >
       <div>
-        <div>
-          <h3 use:melt={$title(id)} class="toasterTitle">
-            {data.title}
-            <span class="circle" style={`background-color: ${data.color}`} />
-          </h3>
-          <div use:melt={$description(id)}>
-            {data.description}
-          </div>
+        <h3 use:melt={$title(id)} class="toasterTitle">
+          {data.title}
+          <span class="circle" style={`background-color: ${data.color}`} />
+        </h3>
+        <div use:melt={$description(id)}>
+          {data.description}
         </div>
-        <button
-          use:melt={$close(id)}
-          aria-label="close notification"
-          class="toasterClose"
-        >
-          <Cross />
-        </button>
       </div>
+      <button
+        use:melt={$close(id)}
+        aria-label="close notification"
+        class="toasterClose"
+      >
+        <Cross />
+      </button>
     </div>
   {/each}
 </div>
@@ -49,19 +52,22 @@
   .toasterWrapper {
     position: fixed;
     z-index: 199999;
-    background: #262626;
-    border-radius: 10px;
     right: 0;
-    bottom: 0;
-    margin: 1rem;
+    top: 0;
+    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
     align-items: flex-end;
   }
 
   .toaster {
+    position: relative;
     padding: 20px;
     padding-top: 0;
+    background: #262626;
+    border-radius: 4px;
+    margin-right: 16px;
+    margin-top: 16px;
   }
 
   .circle {
@@ -81,8 +87,8 @@
   .toasterClose {
     display: grid;
     position: absolute;
-    top: 1.4rem;
-    right: 1rem;
+    top: 22.4px;
+    right: 16px;
     place-items: center;
     border-radius: 9999px;
   }
