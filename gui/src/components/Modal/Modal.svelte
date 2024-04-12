@@ -24,7 +24,7 @@
 
 <style lang="scss">
   .modal {
-    position: absolute;
+    position: fixed;
     z-index: 99999;
     background-color: #0f151c;
     padding: 16px;
