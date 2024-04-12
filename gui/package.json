@@ -12,7 +12,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@inlang/paraglide-js": "1.2.7",
+    "@inlang/paraglide-js": "v1.3.2",
     "@inlang/paraglide-js-adapter-sveltekit": "^0.5.5",
     "@melt-ui/pp": "^0.3.0",
     "@melt-ui/svelte": "^0.76.3",
