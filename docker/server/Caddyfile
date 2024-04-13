@@ -16,5 +16,5 @@ eight.nebel.ai {
 }
 
 teamcity.nebel.ai {
-	reverse_provy :8111
+	reverse_proxy :8111
 }
