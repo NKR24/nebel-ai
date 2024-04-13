@@ -1,0 +1,12 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 8111:8080
+      - 50000:50000
+
+volumes:
+  jenkins-data:
