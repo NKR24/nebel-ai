@@ -9,12 +9,20 @@ services:
       - ./server/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-  # gui:
-  #   build:
-  #     context: ../gui
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "3020:3020"
+  gui:
+    restart: unless-stopped
+    build:
+      context: ../gui
+      dockerfile: Dockerfile
+    ports:
+      - "3020:3020"
+  api:
+    restart: unless-stopped
+    build:
+      context: ../api
+      dockerfile: Dockerfile
+    ports:
+      - "3021:3021"
 
 volumes:
   caddy_data:
