@@ -6,6 +6,8 @@ services:
       - teamcity-server-logs:/home/norn/teamcity/logs
     ports:
       - 8111:8111
+    network_mode: host
+
   teamcity-agent:
     image: jetbrains/teamcity-agent:latest
     privileged: true
