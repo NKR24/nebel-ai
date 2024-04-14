@@ -2,18 +2,18 @@ services:
   teamcity:
     image: jetbrains/teamcity-server:latest
     volumes:
-      - teamcity-server-datadir:/data/teamcity_server/datadir
-      - teamcity-server-logs:/opt/teamcity/logs
-    network_mode: host
-
+      - teamcity-server-datadir:/home/norn/teamcity-server/datadir
+      - teamcity-server-logs:/home/norn/teamcity/logs
+    ports:
+      - 8111:8111
   teamcity-agent:
     image: jetbrains/teamcity-agent:latest
     privileged: true
     environment:
-      SERVER_URL: "http://localhost:8111"
+      SERVER_URL: https://teamcity.nebel.ai
       DOCKER_IN_DOCKER: start
     volumes:
-      - teamcity-agent-conf:/data/teamcity_agent/conf
+      - teamcity-agent-conf:/home/norn/teamcity_agent/conf
       - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
