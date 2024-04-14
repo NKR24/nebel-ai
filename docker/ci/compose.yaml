@@ -8,6 +8,7 @@ services:
       - /opt/teamcity/data:/data/teamcity_server/datadir
     ports:
       - 8111:8111
+    user: root
   teamcity-agent:
     image: jetbrains/teamcity-agent:latest
     privileged: true
