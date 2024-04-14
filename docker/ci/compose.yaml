@@ -1,9 +1,11 @@
 services:
   teamcity:
     image: jetbrains/teamcity-server:latest
+    environment:
+      - "TEAMCITY_CONTEXT=/teamcity/"
     volumes:
-      - ./teamcity-server-datadir:/home/norn/teamcity-server/datadir
-      - ./teamcity-server-logs:/home/norn/teamcity/logs
+      - /opt/teamcity/logs:/opt/teamcity/logs
+      - /opt/teamcity/data:/data/teamcity_server/datadir
     ports:
       - 8111:8111
   teamcity-agent:
