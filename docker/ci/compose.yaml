@@ -1,8 +1,6 @@
 services:
   teamcity:
     image: jetbrains/teamcity-server:latest
-    environment:
-      - "TEAMCITY_CONTEXT=/teamcity/"
     volumes:
       - /opt/teamcity/logs:/opt/teamcity/logs
       - /opt/teamcity/data:/data/teamcity_server/datadir
