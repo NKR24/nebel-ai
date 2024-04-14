@@ -1,4 +1,4 @@
-FROM oven/bun AS builder
+FROM node:21-alpine3.18 AS builder
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,17 +8,18 @@ COPY . .
 
 # Run your build process
 
+RUN npm i -g bun
 RUN bun i
-RUN bun run build
+# RUN bun run build
 
-# Step 2: Create a smaller image for running the application
-FROM oven/bun
+# # Step 2: Create a smaller image for running the application
+# FROM oven/bun
 
-# Copy only the necessary files from the builder image to the final image
-COPY --from=builder /app/build .
+# # Copy only the necessary files from the builder image to the final image
+# COPY --from=builder /app/build .
 
-# Expose the port the application will run on
-EXPOSE 3020
+# # Expose the port the application will run on
+# EXPOSE 3020
 
-#Start the BUN server
-CMD ["bun", "run", "build/index.js"]
+# #Start the BUN server
+# CMD ["bun", "run", "build/index.js"]
