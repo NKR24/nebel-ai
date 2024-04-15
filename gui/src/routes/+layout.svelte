@@ -19,7 +19,6 @@
   })
 </script>
 
-<Starfield />
 
 <ParaglideJS {i18n}>
   <Navbar />
