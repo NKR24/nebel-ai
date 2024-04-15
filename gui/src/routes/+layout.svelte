@@ -1,6 +1,5 @@
 <script>
   import Navbar from "../components/Navbar/Navbar.svelte"
-  import Starfield from "../components/Starfield/Starfield.svelte"
   import Toaster from "../components/Toaster/Toaster.svelte"
   import { ParaglideJS } from "@inlang/paraglide-js-adapter-sveltekit"
   import { i18n } from "../utils/i18n.svelte"
