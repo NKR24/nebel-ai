@@ -15,8 +15,8 @@ services:
       SERVER_URL: http://nebel.ai:8111
     volumes:
       - /opt/teamcity_agent/conf:/data/teamcity_agent/conf
-	    - /var/run/docker.sock:/var/run/docker.sock
-	    - /opt/buildagent/work:/opt/buildagent/work
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/buildagent/work:/opt/buildagent/work
       - /opt/buildagent/temp:/opt/buildagent/temp
       - /opt/buildagent/tools:/opt/buildagent/tools
       - /opt/buildagent/plugins:/opt/buildagent/plugins
