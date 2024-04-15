@@ -9,16 +9,19 @@ services:
       - 8111:8111
     user: root
   teamcity-agent:
-    image: jetbrains/teamcity-agent:2024.03-linux-sudo
+    image: jetbrains/teamcity-agent:latest
     restart: unless-stopped
-    privileged: true
     environment:
       SERVER_URL: http://nebel.ai:8111
-      DOCKER_IN_DOCKER: start
     volumes:
-      - ./teamcity-agent-conf:/home/norn/teamcity_agent/conf
-      - /var/run/docker.sock:/var/run/docker.sock
-    user: "root:986"
+      - /opt/teamcity_agent/conf:/data/teamcity_agent/conf
+	    - /var/run/docker.sock:/var/run/docker.sock
+	    - /opt/buildagent/work:/opt/buildagent/work
+      - /opt/buildagent/temp:/opt/buildagent/temp
+      - /opt/buildagent/tools:/opt/buildagent/tools
+      - /opt/buildagent/plugins:/opt/buildagent/plugins
+      - /opt/buildagent/system:/opt/buildagent/system
+    user: root
 volumes:
   teamcity-server-datadir:
   teamcity-server-logs:
