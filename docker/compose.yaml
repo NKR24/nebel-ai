@@ -1,7 +1,7 @@
 services:
   caddy:
     image: caddy:2.7.6-alpine
-    restart: unless-stopped
+    restart: always
     cap_add:
       - NET_ADMIN
     network_mode: host
@@ -10,14 +10,14 @@ services:
       - caddy_data:/data
       - caddy_config:/config
   gui:
-    restart: unless-stopped
+    restart: always
     build:
       context: ../gui
       dockerfile: Dockerfile
     ports:
       - "3020:3020"
   api:
-    restart: unless-stopped
+    restart: always
     build:
       context: ../api
       dockerfile: Dockerfile
