@@ -19,6 +19,7 @@
   })
 </script>
 
+<h1>Bad</h1>
 
 <ParaglideJS {i18n}>
   <Navbar />
