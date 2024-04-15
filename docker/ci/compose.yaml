@@ -1,6 +1,7 @@
 services:
   teamcity:
     image: jetbrains/teamcity-server:latest
+    restart: unless-stopped
     volumes:
       - /opt/teamcity/logs:/opt/teamcity/logs
       - /opt/teamcity/data:/data/teamcity_server/datadir
@@ -8,14 +9,16 @@ services:
       - 8111:8111
     user: root
   teamcity-agent:
-    image: jetbrains/teamcity-agent:latest
+    image: jetbrains/teamcity-agent:2024.03-linux-sudo
+    restart: unless-stopped
     privileged: true
     environment:
-      SERVER_URL: https://teamcity.nebel.ai
+      SERVER_URL: http://nebel.ai:8111
       DOCKER_IN_DOCKER: start
     volumes:
       - ./teamcity-agent-conf:/home/norn/teamcity_agent/conf
       - /var/run/docker.sock:/var/run/docker.sock
+    user: "root:986"
 volumes:
   teamcity-server-datadir:
   teamcity-server-logs:
