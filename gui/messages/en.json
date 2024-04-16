@@ -21,7 +21,6 @@
 
   "portfolio$portfolio": "Portfolio",
   "portfolio$heading": "Here are some of our creations",
-  "portfolio$message": "Nothing to show yet."
-
-
+  "portfolio$message": "Nothing to show yet.",
+  "portfolio$hbhHeading": "HBH"
 }

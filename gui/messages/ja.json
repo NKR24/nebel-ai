@@ -17,5 +17,6 @@
 
   "portfolio$portfolio": "ポートフォリオ",
   "portfolio$heading": "こちらは私たちのいくつかの作品です",
-  "portfolio$message": "まだ何も表示するものがありません。"
+  "portfolio$message": "まだ何も表示するものがありません。",
+  "portfolio$hbhHeading": "HBH"
 }
