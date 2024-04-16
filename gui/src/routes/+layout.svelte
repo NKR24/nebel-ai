@@ -6,7 +6,6 @@
   import { languageTag } from "$paraglide/runtime"
   import { loadCyrillicFont, loadJapaneseFont } from "../utils/css"
   import "../app.scss"
-  import Starfield from "../components/Starfield/Starfield.svelte"
 
   $effect(() => {
     if (languageTag() === "ru") {
@@ -18,8 +17,6 @@
     }
   })
 </script>
-
-<Starfield />
 
 <ParaglideJS {i18n}>
   <Navbar />
