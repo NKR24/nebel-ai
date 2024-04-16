@@ -20,6 +20,7 @@
 </script>
 
 <Starfield />
+<h1>Testa</h1>
 
 <ParaglideJS {i18n}>
   <Navbar />
