@@ -13,7 +13,7 @@
 
   <div class="card">
     <h1 class={styleHelpers.title}>{t.portfolio$hbhHeading()}</h1>
-    <a href="hbh.nebel.ai">
+    <a href="https://hbh.nebel.ai">
       <img src={hbhLogo} alt="Strongest idol" class="nahIdLive" />
     </a>
   </div>
